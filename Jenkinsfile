@@ -1,7 +1,8 @@
 pipeline{
-    agent {
-        label "agent0"
-    }
+    agent any
+    // {
+    //     label "agent0"
+    // }
     parameters {
         booleanParam (
             defaultValue: true,
@@ -11,10 +12,10 @@ pipeline{
     }
     stages{
       stage("Prepare Postgres"){
-            steps{
-                 when {
-                expression { params.FETCH_BACKEND_REPO }
+         when {
+                expression { return params.FETCH_BACKEND_REPO == true }
             }
+            steps{                
                 echo 'Feaching Backend Repo'
             //     cleanWs()
             //     // checkout scmGit(
