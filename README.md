@@ -4,7 +4,6 @@
   - [Install React + TypeScript + Vite](#install-react--typescript--vite)
     - [Expanding the ESLint configuration](#expanding-the-eslint-configuration)
   - [integrating GraphQL with RTK-Query](#integrating-graphql-with-rtk-query)
-  - [Run Docker Jenkins](#run-docker-jenkins)
 
 ## Install React + TypeScript + Vite
 
@@ -50,10 +49,4 @@ export default {
 npm i graphql graphql-codegen --save
 
 npm i @graphql-codegen/cli @graphql-codegen/client-preset @rtk-query/graphql-request-base-query @graphql-codegen/typescript-resolvers @graphql-codegen/typescript-rtk-query --save-dev
-```
-
-## Run Docker Jenkins
-
-```
-docker compose -f ./compose.jenkins.yml up
 ```
