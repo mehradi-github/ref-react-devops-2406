@@ -7,7 +7,7 @@ FROM base AS build
 COPY . .
 RUN npm run build
 
-FROM base AS production
+FROM base AS prod
 ENV NODE_ENV=production
 RUN npm install -g serve
 RUN addgroup --system --gid 1001 nodejs
@@ -25,6 +25,6 @@ FROM node:lts-alpine3.20 AS dev
 WORKDIR /app
 ENV NODE_ENV=development
 COPY . .
-RUN npm install 
+# RUN npm install 
 CMD ["npm", "run", "dev"]
 
